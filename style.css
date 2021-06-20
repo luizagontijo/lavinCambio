@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* CABEÇALHO VERDE */
+header div {
+    width: 100vw;
+    height: 7vh;
+    background-color: #589167;
+    display: flex;
+    align-items: center;
+}    
+
+header h2 {
+    color: white;
+    padding-left: 150px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+header img {
+    width: 25px;
+}
+
+header li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 10px 0 10px;   
+}
+
+header ul {
+    position: relative;
+    left: 55%;
+}
+
+
+/* MENU BRANCO */
+menu {
+    position: -webkit-sticky;
+    position: sticky; 
+    top: -1px;
+}
+
+nav {
+    width: 100%;
+    height: 14vh;
+    background-color: white;
+    display: flex;
+    align-items: center;     
+}
+
+menu li {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#nomedaempresa {
+    margin-left: 150px;
+    font-size: 45px;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.itemMenu {
+    position: relative;
+    left: 38%;
+    margin: 0 10px 0 10px;
+}
+
+menu a {
+    text-decoration: none;
+    color: black;
+}
+
+menu a:hover {
+    color: #589167;
+    transition: 0.4s;
+    font-size: 23px;
+}
+
+
+/* FOTO DE CAPA + TEXTO NA CAPA */
+#capa div {
+    width: 100%;
+    height: 135vh;
+    background-image: url("imagens/fundo1.jpg");
+    background-size: 100%;  
+    background-repeat: no-repeat;
+}
+
+#capa div h1 {
+    font-size: 70px;
+    padding: 20px 0 0 350px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+#capa div p {
+    font-size: 20px;
+    padding: 10px 0 0 350px; 
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: bolder;
+}
+
+
+/* SERVICOS */
+main { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+
+div#texto {
+    width: 80%;
+    height: 30vh;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div#texto h2 {
+    color: #589167;
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+
+div#texto h3 {
+    color: #504f4f;
+    font-size: 40px;
+    padding-top: 15px;
+}
+
+#divservicos{    
+    width: 80%;
+    height: 50vh;
+    display: inline-flex; 
+    justify-content: center;    
+}
+
+.quadrada {
+    width: 33%; 
+    height: 52vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redonda {
+    width: 80%; 
+    height: 80%;
+    border-radius: 50%;
+    background-color: #F5F4F0;
+    display: flex;
+    align-items: center; 
+}
+
+.redonda:hover {
+    background-color: #589167;
+    transition: 0.8s;    
+}
+
+.redonda a{
+    display: flex;
+    justify-content: center; 
+}
+
+.redonda img {
+    width: 60%;
+}
+
+.quadrada h2 {
+   padding: 5px;   
+}
+
+.pServico {
+    text-align: center;
+    padding: 2px;
+    color: #504f4f;
+    font-size: 18px;
+}
+
+
+/* SOBRE NÓS */
+#sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+#divsobre {
+    width: 80%;
+    height: 70vh;
+    padding-top: 10%; 
+    padding-bottom: 5%;
+}
+
+#divsobre div {
+    width: 50%;
+    height: 70vh;
+    float: left;
+    overflow: hidden;
+    background-color: #F5F4F0;
+}
+
+#divsobre div img {
+    width: 145%;
+}
+
+#divsobre div h2{
+    font-size: 20px;
+    color: #589167;
+    padding: 20px 0 0 20px;
+    text-shadow: 1px 1px white;
+}
+
+#divsobre h4{
+    color: #292929;
+    padding: 2px 0 20px 20px;
+    font-size: 40px;
+    text-shadow: 1px 1px white;
+}
+
+#divsobre div p{
+    color: #504f4f;
+    padding: 0 20px 10px 20px;
+    font-size: 23px;
+    text-shadow: 1px 1px white;
+}
+
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: 40vh;
+    background-color:#599168;   
+}
+
+footer div {
+    width: 33.3%;
+    height: 40vh;
+    float: left;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.divconteudofooter{
+    flex-direction: column;
+    text-align: right;
+}
+
+.divconteudofooter img {
+    width: 8%;
+}
+
+h5{
+    color: white;
+    font-weight: lighter;
+    font-size: 20px;
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 20px;
+}
+
+.divconteudofooter p {
+    color: white;
+    padding: 5px 0 15px 0;
+}
+
+#divconteudofooter img{
+    padding: 5px 0 13px 0;
+    cursor: pointer;   
+}
+
+#copyright{
+    font-size: 0.8em;
+}
+
+/* --------------------------------> JAVASCRIPT | DARK MODE E LETRAS MAIORES <-------------------------------- */
+
+/* FIXADO - AUMENTAR TEXTO + JAVASCRIPT */
+#aumentartexto li {
+    display: inline-block;
+    font-size: 40px;
+    letter-spacing:  2px;
+    cursor: pointer;
+}
+
+#aumentartexto li#diminuir {
+    font-size: 30px;
+}
+
+#aumentartexto ul {
+    position: fixed;
+    left: 96%;
+    bottom: 1px;  
+}
+    #capa p.menos{
+        font-size: 25px;
+    }
+    #capa p.mais {
+        font-size: 30px;
+    }
+
+    main p.menos {
+        font-size: 19px;
+    }
+    main p.mais {
+        font-size: 21px;
+    }
+
+    #sobre p.menos {
+        font-size: 25px;
+    }
+
+   #sobre p.mais {
+        font-size: 26px;
+    }
+
+
+
+/* DARK-MODE JAVASCRIPT */
+label {
+    position: absolute;
+    background-color: #589167;
+    height: 25px;
+    width: 60px;
+    border: 3px solid black;
+    border-radius: 30px;
+    left: 110%;
+}
+
+label:before{
+    position: absolute;
+    content: "";
+    background-color: black;
+    height: 24px;
+    width: 26px;
+    border-radius: 50px;
+    left: 1px;
+    cursor: pointer;
+    transition: 0.9s;
+    }
+
+label.dia:before {
+    left: 34px;
+    background-color: #fff;
+}
+
+body.noite {
+    background-color: rgb(34, 34, 34);
+    color: #fff;
+    text-shadow: 5px 5px 10px black;
+}
+
+nav.noite {
+    background-color: rgb(34, 34, 34);
+}
+
+a.noite {
+    color: #fff;
+}
+
+.pServico.noite {
+    color: white;
+}
+
+#textoh3.noite{
+    color: white;
+}
+
+
+
+    
+
+  
+

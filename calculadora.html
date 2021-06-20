@@ -1,0 +1,273 @@
+<!Doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,300&family=Philosopher&display=swap" rel="stylesheet">
+        <style>
+            *{margin:0; padding: 0;}
+            body{width: 100%;
+                height: 900px;
+            }
+            input {width: 75px;
+                height: 75px;
+                background-color: #707570;
+                font-size: 30px;
+            }
+            input[name]{width: 302px;
+                height: 70px;
+                background-color:rgba(154, 172, 172, 0.952);;
+            } 
+            .igual {height: 151px;}
+            .zero {width: 151px;}
+            #tabela1, #tabela2 {
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 300px;
+                height: 300px;
+                }
+            #principal {width: 80%;
+                height: 100%;
+                margin: 0 auto;
+                margin-top: 20px;
+                margin-bottom: 30px;
+                display: flex;
+                flex-direction: row;
+                border: solid 6px #589167;
+                background-image: url('imagens/calculos.jpg');
+            }
+            #principal div {
+                width: 50%;
+                height: 100%;
+                margin-top: 30px;
+                margin-left:200px;
+                margin-bottom: 50px;
+                display: none;
+            }
+            #hab1, #hab2{
+                margin: 0 auto;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                background-color: #589167;
+                color: white;
+                font-size: 20px;
+                width: 250px;
+                height: 50px;
+            }
+            h1 {
+                text-align: center;
+                font-size: 40px;
+            }
+            h2 {
+                font-size: 30px;
+            }
+       </style>
+    </head>
+    <body>
+        <section>
+            <header>
+                <div>
+                    <h2>login | (99) 99999-9999</h2>
+                    <ul>                           
+                        <li><img src="imagens/iconface.png" alt="ícone facebook"></li>
+                        <li><img src="imagens/iconinst.png" alt="ícone instagram"></li>
+                        <li><img src="imagens/icontwit.png" alt="ícone twitter"></li>
+                        <li><img src="imagens/icontele.png" alt="ícone telegram"></li>
+                        <label id="darkmode"></label>  
+                    </ul>
+                </div>
+            </header>
+            <menu>
+                <nav>
+                    <ul>
+                        <li id ="nomedaempresa">LAVINCâmbio</li>
+                        <li class="itemMenu"><a href="index.html">Início</a></li>
+                        <li class="itemMenu"><a href="index.html">Nossos Serviços</a></li>
+                        <li class="itemMenu"><a href="index.html">Sobre Nós</a></li>
+                        <li class="itemMenu"><a href="index.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </menu>
+       
+        <script>
+/*------------------------CALCULADORA SIMPLES ------------------------*/
+            function insert (x) {//digita o valor no input de digitação
+                document.formulario.digitar.value= document.formulario.digitar.value + x;
+            };
+            //apaga tudo que foi digitado 
+            function c (){document.formulario.digitar.value = " "};
+            //pega o valor digitado e calcula
+            function conta(){ 
+                calculo = document.formulario.digitar.value;
+                document.formulario.digitar.value = eval(calculo);//A função eval() avalia ou executa um argumento.
+            };
+            function apagar (){//apaga o ultimo digito
+                calculo = document.formulario.digitar.value;
+                document.formulario.digitar.value = calculo.substring(0, calculo.length-1);
+            }
+/*------------------------CALCULADORA CIENTIFICA ------------------------*/
+            function adicionar (x) {//digita o valor no input de digitação
+                 document.form.escrever.value= document.form.escrever.value + x;
+            };
+            function excluir (){document.form.escrever.value = " "}; //apaga tudo que foi digitado
+            function calcular(){ //pega o valor digitado e calcula
+                calculo = document.form.escrever.value;
+                document.form.escrever.value = eval(calculo);//A função eval() avalia ou executa um argumento.
+            }
+            function limpar (){//apaga o ultimo digito
+                calculo = document.form.escrever.value;
+                document.form.escrever.value = calculo.substring(0, calculo.length-1);
+            }// substring faz o contagem da substring(inicia em 0 e faz o valor - 1)
+            
+            function raiz (){// chama o valor e faz o calculo da raiz quadrada
+                quadrado = document.form.escrever.value = Math.sqrt(document.form.escrever.value);
+            }
+            function elevado (){// chama o valor e faz o calculo elevado ao quadrado
+                elevadoQuadrado = document.form.escrever.value = Math.pow(document.form.escrever.value,2);
+            }
+            function cubo (){// chama o valor e faz o calculo elevado ao cubo
+                elevadoCubo= document.form.escrever.value = Math.pow(document.form.escrever.value,3);
+            }
+            function pi (){// retorna o numero de PI
+                document.form.escrever.value = Math.PI;
+            }
+/*------------------Botões de habilitação---------------------*/
+            function habilita1 (){//habilida a calculadora 
+                document.getElementById("primeira").style.display = "block";//aparece a primeira calculadora
+                document.getElementById("segunda").style.display = "none";//some a segunda calculadora
+                document.getElementById("hab1").style.display = "none";//some o botao da primeira calculadora
+                document.getElementById("hab2").style.display = "block";//aparece o botao da segunda calculadora
+            } 
+            function habilita2 (){
+                document.getElementById("segunda").style.display = "block";//aparece a segunda calculadora
+                document.getElementById("primeira").style.display = "none";//some a primeira calculadora
+                document.getElementById("hab2").style.display = "none";//some o botao da segunda calculadora
+                document.getElementById("hab1").style.display = "block";//aparece o botao da primeira calculadora
+            } 
+        </script>
+
+        <h1>Te ajudamos a Calcular</h1>
+            <div id="principal">
+ <!------------------------CALCULADORA SIMPLES---------------------->
+            <!--chama a funçao do botao de habilitação  da calculadora-->
+            <button  id="hab1" onclick="habilita1()">Calculadora Simples</button>
+            <div id="primeira" >
+                <table id="tabela1" border="black">
+                    <form name="formulario"><!--name dado para chamar o caminho na função-->
+                        <tr>
+                            <input name="digitar" placeholder="Calculadora Simples">
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="c()" value="c"></td><!--Chama a funçao de apagar tudo-->
+                            <td><input type="button" onclick="apagar()" value="<"></td><!--Chama a funçao de apagar o ultimo numero-->
+                            <td><input type="button" onclick="insert('/')" value="/"></td><!--insere a divisao-->
+                            <td><input type="button" onclick="insert('*')" value="*"></td><!--insere a multiplicaçao-->
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="insert(7)" value="7"></td>
+                            <td><input type="button" onclick="insert(8)" value="8"></td>
+                            <td><input type="button" onclick="insert(9)" value="9"></td>
+                            <td><input type="button" onclick="insert('+')" value="+"></td><!--insere a adição-->
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="insert(4)" value="4"></td>
+                            <td><input type="button" onclick="insert(5)" value="5"></td>
+                            <td><input type="button" onclick="insert(6)" value="6"></td>
+                            <td><input type="button" onclick="insert('-')" value="-"></td><!--insere a subtração-->
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="insert(1)" value="1"></td>
+                            <td><input type="button" onclick="insert(2)" value="2"></td>
+                            <td><input type="button" onclick="insert(3)" value="3"></td>
+                            <td rowspan="2"><input type="button" class="igual" onclick="conta()" value="="></td>
+                            <!--chama a funçao de realizar os calculos-->
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" class="zero" onclick="insert(0)" value="0"></td>
+                            <td><input type="button" onclick="insert('.')" value="."></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+<!------------------CALCULADORA CIENTIFICA---------------->
+             <!--chama a funçao do botao de habilitação da calculadora-->
+            <button id="hab2" onclick="habilita2()" >Calculadora Científica</button>
+            <div id="segunda" >
+                <table id="tabela2" border="black">
+                
+                    <form name="form"> <!--name dado para chamar o caminho na função-->
+                        <tr>
+                            <input name="escrever" placeholder="Calculadora Científica">
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="excluir()" value="c"></td><!--Chama a funçao de apagar tudo-->
+                            <td><input type="button" onclick="limpar()" value="<"></td><!--Chama a funçao de apagar o ultimo numero-->
+                            <td><input type="button" onclick="pi()" value="&pi;"></td><!--chama a funçao que realiza o calculo PI-->
+                            <td> <input type="button" onclick="adicionar('/')" value="/"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="raiz()" value="²&Sqrt;&xscr;"></td><!--chama a funçao que realiza a raiz quadrada-->
+                            <td><input type="button" onclick="elevado()" value="&xscr;²"></td><!--chama a funçao que realiza o Numero Elevado ao quadrado-->
+                            <td><input type="button" onclick="cubo()" value="&xscr;³"></td><!--chama a funçao que realiza o Numero Elevado ao cubo-->
+                            <td><input type="button" onclick="adicionar('*')" value="*"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="adicionar(7)" value="7"></td>
+                            <td><input type="button" onclick="adicionar(8)" value="8"></td>
+                            <td><input type="button" onclick="adicionar(9)" value="9"></td>
+                            <td><input type="button" onclick="adicionar('+')" value="+"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="adicionar(4)" value="4"></td>
+                            <td><input type="button" onclick="adicionar(5)" value="5">
+                            <td><input type="button" onclick="adicionar(6)" value="6"></td>
+                            <td><input type="button" onclick="adicionar('-')" value="-"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="adicionar(1)" value="1"></td>
+                            <td><input type="button" onclick="adicionar(2)" value="2"></td>
+                            <td><input type="button" onclick="adicionar(3)" value="3"></td>
+                            <td rowspan="2"><input type="button" onclick="calcular()" class="igual" value="="></td>
+                            <!--chama a funçao de realizar os calculos-->
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" class="zero" onclick="adicionar(0)" value="0"></td>
+                            <td><input type="button" onclick="adicionar('.')" value="."></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+        </div>
+        
+            <footer>
+                <div>
+                    <img src="imagens/logo.png" alt="logo LAVIN" style="width: 50%"/>
+                    <h5>A LAVIN conta com uma consultoria exclusiva com diversas soluções de câmbio
+                    para você se conectar com o mundo de maneira simples e segura.</h5>
+                </div>
+            
+                <div class="divconteudofooter">
+                    <h5>CONTATE-NOS</h5>
+                    <img src="imagens/iconmap.png" alt="icon mapa"/> <p>Rua Soul Code Academy, 2265, São Paulo BR</p>
+                    <img src="imagens/iconphone.png" alt="icon telefone"/> <p>(99) 99999-9999</p>    
+                    <img src="imagens/iconemail.png" alt="icon email"/> <p>lavin@gmail.com.br</p>
+                </div>
+            
+                <div class="divconteudofooter" id="divconteudofooter">
+                    <h5>SIGA-NOS NAS REDE SOCIAIS</h5>
+                    <img src="imagens/iconface.png" alt="ícone facebook">
+                    <img src="imagens/iconinst.png" alt="ícone instagram">
+                    <img src="imagens/icontwit.png" alt="ícone twitter">
+                    <img src="imagens/icontele.png" alt="ícone telegram">
+                </div>
+            </footer>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
